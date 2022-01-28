@@ -34,27 +34,7 @@
   
   <body>
     <audio id="j-bgm" src="https://music.163.com/song/media/outer/url?id=114803.mp3" autoplay preload loop></audio>
-    <script>
-      var audio = $('#j-bgm');
-      var isPlaying = false;
-      function playAudio() {
-          var audio = $('#j-bgm');
-          if (audio.attr('src') == undefined) {
-              audio.attr('src', audio.data('src'));
-          }
-          audio[0].play();
-          isPlaying = true;
-      }
-      $(function(){
-          playAudio();
-          document.addEventListener("WeixinJSBridgeReady", function () {
-              WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-                  network = e.err_msg.split(":")[1];  //结果在这里
-              playAudio();
-              });
-          }, false);
-      })
-    </script>
+
     <div id="outer-container"></div>
     <script>
         var list = [{
